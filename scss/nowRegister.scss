@@ -1,0 +1,170 @@
+@charset "utf-8";
+@import "reset";
+@import "common";
+/*处理px单位的值，转换为rem单位*/
+
+@function r($px) {
+    @return $px/100px*1rem;
+}
+
+body {
+    font-size: 14px;
+    color: white;
+    /*头部导航栏*/
+    header {
+        color: white;
+        height: 44.5px;
+        background-color: #b20000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 r(16px);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        >img {
+            width: r(264px);
+            height: 20px;
+        }
+        >img:last-of-type {
+            width: 0.3rem;
+        }
+    }
+    .logged{
+        background-color: #222222;
+        padding-bottom: r(147px);
+        .logged-top {
+            padding: r(123px) r(91px) 0;
+            text-align: center;
+            ul {
+                li {
+                    .logged-head {
+                        width: r(220px);
+                        height: r(220px);
+//                      background-color: yellow;
+                        border-radius: 50%;                            
+                        margin: 0 auto;
+                        position: relative;
+                        margin-bottom: r(16px);
+                        overflow: hidden;
+                        img {
+                            width: 100%;   
+                        }                       
+                    }                  
+                    .nowRegister {
+                        margin-bottom: r(12px);
+                        a{
+                            color: white;
+                        }                     
+                    }
+                    .forgetPassword{
+                        font-size: 11px;
+                        margin-bottom: r(73px); 
+                        >a{
+                            color: white;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .gray {
+            width: 100%;
+            height: r(23px);
+            background-color: #303030;
+        }
+        /*手风琴列表*/
+        .nav {
+            width: 100%;
+            color: #7f7f7f;
+            padding: 0 r(30px) r(27px);
+            .item01 {
+                max-height: 150px;
+            }
+            .item02 {
+                max-height: 150px;
+            }
+            .item03 {
+                max-height: 200px;
+            }
+            .item04 {
+                max-height: 280px;
+                h3:last-of-type {
+                    border-bottom: 0;
+                }
+            }
+            h3 {
+                width: 100%;
+                height: r(95px);
+                font-size: 15px;
+                line-height: r(95px);
+                margin-bottom: r(15px);
+                border-bottom: 1px solid #3a3a3a;
+                position: relative;
+                span {
+                    position: absolute;
+                    right: 0;
+                    margin-right: r(10px);
+                }
+            }
+            p {
+                width: r(430px);
+                height: r(87px);
+                line-height: r(87px);
+                font-size: 12px;
+                color: white;
+                text-align: center;
+                margin: 0 auto;
+                border-bottom: 1px solid #3a3a3a;
+            }
+            li:last-of-type {
+                p:last-of-type {
+                    border-bottom: 0;
+                }
+            }
+            .call {
+                p {
+                    font-size: 12px;
+                    //                  -webkit-transform:scale(0.8);
+                    //                  display:block;
+                }
+            }
+            .column {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition-property: height;
+                transition-duration: 1s;
+                li:last-of-type {
+                    margin-bottom: 22px;
+                }
+            }
+            a {
+                color: white;
+            }
+            input {
+                display: none;
+            }
+            input:checked+label~.column {
+                height: 250px;
+            }
+            input::after {
+                width: 15px;
+                height: 15px;
+                content: "-";
+                /*display: initial;*/
+            }
+            input:checked::after {
+                display: inline-block;
+            }
+            input+label span {
+                transition: all 0.3s;
+                display: inline-block;
+            }
+            input:checked+label span {
+                transform: rotateZ(90deg);
+            }
+        }       
+    }
+}

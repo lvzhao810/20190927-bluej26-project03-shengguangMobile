@@ -1,0 +1,107 @@
+@charset "utf-8";
+@import "reset";
+@import "common";
+/*处理px单位的值，转换为rem单位*/
+@function r($px) {
+    @return $px/100px*1rem;
+}
+body{     
+    /*头部导航栏*/
+        header {
+            color: white;
+            height: 44.5px;
+            background-color: #b20000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 r(16px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            >img {
+                width: r(264px);
+                height: 20px;
+            }
+            >img:last-of-type {
+                width: 0.3rem;
+            }
+        }        
+    .loginRegister{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-size: 0;
+        background-color: #222222;
+        padding: r(193px) r(73px) r(296px);
+        .loginRegister-logo{ 
+            margin-bottom: r(47px);           
+        }
+        .loginRegister-text{
+            ul{
+                font-size: 0;
+                li{
+                    width: 100%;
+                    height: r(54px);
+                    margin-bottom: r(16px); 
+                    .loginRegister-img{
+                        width: r(54px);
+                        height: r(54px);
+                        background-color: #303030;
+                        position: absolute;
+                        img{
+                            width: 0.3rem; 
+                            margin-top: r(11px); 
+                        }                                                 
+                    }
+                    input{
+                        width: 100%;
+                            height: r(54px);
+                            font-size: 10px;
+                            color: white;
+                            border: 0;
+                            background-color: #3d3d3d;
+                            letter-spacing: r(2px);                            
+                        &::-webkit-input-placeholder{
+                            color: white;
+                        }
+                    }
+                    &:nth-of-type(1),&:nth-of-type(2){
+                        input{                                                  
+                            padding-left: r(100px);                            
+                        }
+                    }  
+                    &:nth-of-type(3){
+                        padding-right: r(11px);
+                        margin-bottom: r(37px);
+                        p{
+                            font-size: 12px;
+                            line-height: 32px;                            
+                            float: right;
+                            color: white; 
+                            i{
+                                vertical-align: bottom;
+                            }
+                            a{
+                               color: white; 
+                            }
+                        }                       
+                    }
+                    &:nth-of-type(4){
+                        input{
+                            background-color: #b60005;
+                            letter-spacing: r(10px);                            
+                        }
+                    }
+                    &:nth-of-type(5){
+                        input{
+                            border: #B60005 solid 1px;
+                            letter-spacing: r(10px);                            
+                        }
+                    }              
+                }
+            }
+        }
+        
+    }
+}

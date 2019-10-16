@@ -1,0 +1,215 @@
+@charset "utf-8";
+@import "reset";
+@import "common";
+//处理px单位的值，转换为rem单位
+@function r($px) {
+    @return $px/100px*1rem;
+}
+
+body {
+    .index {
+        font-size: 12px;
+        a {
+            color: black;
+        }
+        /*头部导航栏*/
+        header {
+            color: white;
+            height: 44.5px;
+            background-color: #b20000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 r(16px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            .caidanlan {
+                //              background-color: green;
+                width: r(60px);
+                height: r(60px);
+                line-height: r(60px);
+                position: relative;
+                .message {
+                    width: r(28px);
+                    height: r(28px);
+                    text-align: center;
+                    line-height: r(28px);
+                    border-radius: 50%;
+                    background-color: #ff0000;
+                    position: absolute;
+                    top: 0;
+                    left: r(20px);
+                    a {
+                        font-size: 11px;
+                        color: white;
+                    }
+                }
+            }
+            >img {
+                width: r(264px);
+                height: 20px;
+            }
+            >img:last-of-type {
+                width: 0.3rem;
+            }
+        }
+        .content {
+            margin-top: 44.5px;
+            background-color: #f5f5f5;
+            /*轮播图*/
+            .slideshow {
+                font-size: 0;
+                position: relative;
+                a {
+                    width: 100%;
+                    >img {
+                        width: 100%;
+                    }
+                }
+                .slideshow-text {
+                    width: 100%;
+                    height: 33.33%;
+                    font-size: 13px;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    position: absolute;
+                    bottom: 0;
+                    padding: r(22px) r(20px);
+                    h3 {
+                        margin-bottom: r(10px);
+                        a {
+                            color: white;
+                            background-color: #B20000;
+                        }
+                    }
+                    ul {
+                        text-align: center;
+                        li {
+                            img {
+                                width: 0.1rem;
+                                margin-right: r(22px);
+                            }
+                            a:last-of-type {
+                                img:last-of-type {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*营销列表*/
+            .arketingList {
+                ul {
+                    background-color: white;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: r(20px) r(29px) r(33px);
+                    li {
+                        width: r(282px);
+                        background-color: #f6f6f6;
+                        margin-top: r(22px);
+                        &:nth-of-type(1),
+                        &:nth-of-type(2) {
+                            margin-top: 0;
+                        }
+                        .arketingList-img {
+                            width: r(282px);
+                            font-size: 0;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        h3 {
+                            font-size: 11px;
+                            margin: r(14px) r(5px) r(6px) r(14px);
+                        }
+                    }
+                    p {
+                        color: #c5c5c5;
+                        margin: 0 r(7px) 0 r(8px);
+                        &:first-of-type {
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 10px;
+                            margin-bottom: r(14px);
+                            img {
+                                width: 0.2rem;
+                            }
+                            span:first-of-type {
+                                display: inline-block;
+                                width: r(88px);
+                                text-align: center;
+                                color: white;
+                                background-color: #B20000;
+                                border-radius: r(5px);
+                            }
+                        }
+                        &:last-of-type {
+                            font-size: 9px;
+                            margin-bottom: r(7px);
+                            img {
+                                width: 0.3rem;
+                            }
+                            span:nth-of-type(2) {
+                                margin: 0 r(13px) 0 r(6px);
+                            }
+                        }
+                    }
+                }
+            }
+            .loadMore {
+                height: r(60px);
+                font-size: 11px;
+                text-align: center;
+                line-height: r(60px);
+                border-top: #C5C5C5 solid 1px;
+                margin-bottom: 60px;
+                a {
+                    color: #C5C5C5;
+                }
+            }
+        }
+        /*底部导航栏*/
+        footer {
+            border-top: #C5C5C5 solid 1px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            ul {
+                height: 60px;
+                display: flex;
+                justify-content: space-around;
+                background-color: #f5f5f5;
+                text-align: center;
+                padding: 12px 0;
+                li {
+                    width: 20%;
+                    color: #C5C5C5;
+                    border-right: #C5C5C5 solid 1px;
+                    &:last-of-type {
+                        border-right: 0;
+                    }
+                    img {
+                        width: 0.5rem;
+                    }
+                    a {
+                        color: #C5C5C5;
+                        &:hover{
+                           color: #B20000; 
+                        }
+                    }
+                }
+                .active {
+                    a {
+                        color: #B20000;
+                    }
+                }
+            }
+        }        
+    }
+}

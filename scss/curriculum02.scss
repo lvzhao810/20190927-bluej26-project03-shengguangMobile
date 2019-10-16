@@ -1,0 +1,217 @@
+@charset "utf-8";
+@import "reset";
+@import "common";
+//处理px单位的值，转换为rem单位
+@function r($px) {
+    @return $px/100px*1rem;
+}
+
+body {
+    .index {
+        font-size: 12px;
+        a {
+            color: black;
+        }
+        /*头部导航栏*/
+        header {
+            color: white;
+            height: 44.5px;
+            background-color: #b20000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 r(16px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            .caidanlan {
+                //              background-color: green;
+                width: r(60px);
+                height: r(60px);
+                line-height: r(60px);
+                position: relative;
+                .message {
+                    width: r(28px);
+                    height: r(28px);
+                    text-align: center;
+                    line-height: r(28px);
+                    border-radius: 50%;
+                    background-color: #ff0000;
+                    position: absolute;
+                    top: 0;
+                    left: r(20px);
+                    a {
+                        font-size: 11px;
+                        color: white;
+                    }
+                }
+            }
+            >img {
+                width: r(264px);
+                height: 20px;
+            }
+            >img:last-of-type {
+                width: 0.3rem;
+            }
+        }
+        .content {
+            margin-top: 44.5px;
+            color: #8B8B8B;
+            background-color: #f5f5f5;
+            margin-bottom: 60px;
+           .academy-eventProfile{
+               background-color: white;
+               padding: r(29px);
+               h3{
+                   color: black;
+                   font-size: 15px;
+               }
+               p{
+                   font-size: 10px;
+                   text-align: justify;
+                   &:first-of-type{
+                       font-size: 9px;
+                       line-height: r(46px);
+                       border-bottom: #d2d2d2 solid 1px;
+                       display: flex;
+                       justify-content: space-between;
+                       a{
+                           color: #8B8B8B;
+                       }
+                   }
+                   &:nth-of-type(2),&:nth-of-type(3){
+                       margin-bottom: r(40px);
+                   }
+               }
+               .academy-img{
+                   width: 100%;
+                   font-size: 0;
+                   margin: r(16px) 0 r(32px);
+                   img{
+                       width: 100%;
+                   }
+               }
+           }
+           .date-address{
+               background-color: white;
+               margin-top: r(25px);
+               padding: r(16px) r(29px) r(26px);
+               h3{
+                   color: black;
+                   font-size: 15px;
+                   margin-bottom: r(15px);
+               }
+               p{
+                   font-size: 10px;
+                   &:first-of-type{
+                       margin-bottom: r(12px);
+                   }
+                   span{
+                       img{
+                           width: 0.25rem;
+                           font-size: 0;
+                           vertical-align: text-bottom;
+                           margin-right: r(12px);
+                       }
+                   }
+               }
+           }
+           .lecturerSynopsis{
+               background-color: white;
+               margin-top: r(25px);
+               padding: r(16px) r(29px) r(18px);
+               h3{
+                   font-size: 10px;
+                   margin-bottom: r(12px);
+               }
+               .ls-list{
+                   display: flex;
+                   justify-content: space-between;
+                   li{
+                       display: flex;
+                        justify-content: flex-start;
+                       .ls-list-left{
+//                         width: 100%;
+                           font-size: 0;
+                           margin-right: r(6px);
+                           img{
+                               width: r(87px);
+                           }
+                       }
+                       .ls-list-right{
+                           align-items: center;
+                           padding-top: r(10px);
+                           p{
+                               font-size: 7px;
+                               &:first-of-type{
+                                   font-size: 9px;
+                                   margin-bottom: r(9px);
+                               }
+                               
+                           }
+                       }
+                   }   
+               }
+           }
+           .apply{
+               text-align: center;
+               margin-top: r(25px);
+               padding: r(21px) r(27px) r(241px);
+               background-color: white;
+               a{
+                   h3{
+                       width: 100%;
+                       height: r(86px);
+                       font-size: 16px;
+                       line-height: r(86px);
+                       color: white;
+                       background-color: #B20000;
+                       img{
+                           width: 0.27rem;
+                           margin-left: r(18px);
+                           vertical-align: text-bottom;
+                       }
+                   }   
+               }
+           }
+        }
+        /*底部导航栏*/
+        footer {
+            border-top: #C5C5C5 solid 1px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            ul {
+                height: 60px;
+                display: flex;
+                justify-content: space-around;
+                background-color: #f5f5f5;
+                text-align: center;
+                padding: 12px 0;
+                li {
+                    width: 20%;
+                    color: #C5C5C5;
+                    border-right: #C5C5C5 solid 1px;
+                    &:last-of-type {
+                        border-right: 0;
+                    }
+                    img {
+                        width: 0.5rem;
+                    }
+                    a {
+                        color: #C5C5C5;
+                        &:hover{
+                           color: #B20000; 
+                        }
+                    }
+                }
+                .active {
+                    a {
+                        color: #B20000;
+                    }
+                }
+            }
+        }
+    }
+}
